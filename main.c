@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alunard <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bebigel <bebigel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:06:22 by alunard           #+#    #+#             */
-/*   Updated: 2022/07/16 13:49:40 by alunard          ###   ########.fr       */
+/*   Updated: 2022/07/16 14:40:31 by bebigel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	check_args(int argc, char **argv)
 
 	if (argc != 2)
 		return (0);
-	if (ft_(argv[1]) != 4 * 3 - 1
+	if (ft_(argv[1]) != 4 * 3 - 1)
 		return (0);
-	i = 0
+	i = 0;
 	while (argv[1][i])
 	{
 		if (i % 2 == 0 && (argv[1][i] < '1' || argv[1][i] > '4'))
@@ -38,8 +38,10 @@ int	main(int argc, char **argv)
 	int	j;
 
 	if (!check_args(argc, argv))
+	{
 		write(2, "Error\n", 6);
 		return (-1);
+	}
 	tab = init_tab(argv[1]);
 	if (!tab)
 		return (-1);
